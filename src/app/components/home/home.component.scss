@@ -1,0 +1,11 @@
+@import "/src/app/styles/variables";
+
+.image-div{
+    background-image: url(/assets/images/logo_rim.svg);
+    background-color: $my-primary-color;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80% 80%;
+    width: 100%;
+    height: 60vh;
+}

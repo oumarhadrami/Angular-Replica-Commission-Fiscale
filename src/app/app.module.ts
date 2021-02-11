@@ -8,11 +8,17 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { faTimesCircle } from '@fortawesome/free-regular-svg-icons';
+import { HomeComponent } from './components/home/home.component';
+import { RecentNewsComponent } from './components/recent-news/recent-news.component';
+import { OlderNewsComponent } from './components/older-news/older-news.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    HomeComponent,
+    RecentNewsComponent,
+    OlderNewsComponent
   ],
   imports: [
     BrowserModule,
