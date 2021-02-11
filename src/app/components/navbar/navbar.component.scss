@@ -1,0 +1,35 @@
+@import "/src/app/styles/variables";
+
+
+
+
+.entire-navbar-div {
+  background-color: $my-primary-color;
+  font-family: $french-font;
+}
+
+.my-navbar-div {
+  .navbar-brand {
+    color: white;
+  }
+
+  .navbar-toggler {
+    border: none !important;
+    outline: none !important;
+    color: white;
+  }
+}
+
+.nav-item {
+  .nav-link {
+    color: white;
+  }
+  .nav-link-arabe {
+    font-family: "LouguiyaAR";
+    font-size: 18px;
+  }
+
+  .dropdown-menu:focus {
+    border: none !important;
+  }
+}

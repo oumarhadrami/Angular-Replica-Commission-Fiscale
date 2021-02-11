@@ -1,4 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
 
 /* Importing Bootstrap SCSS file. */
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
+
+@font-face {
+  font-family: "LouguiyaFR";
+  src: url(\assets\fonts\LouguiyaFR.ttf);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "LouguiyaFR";
+  src: url(\assets\fonts\LouguiyaFR-Bold.ttf);
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "LouguiyaAR";
+  src: url(\assets\fonts\Louguiya.ttf);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "LouguiyaAR";
+  src: url(\assets\fonts\Louguiya-Bold.ttf);
+  font-weight: bold;
+}
+

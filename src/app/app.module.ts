@@ -6,10 +6,13 @@ import { AppComponent } from './app.component';
 import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { faTimesCircle } from '@fortawesome/free-regular-svg-icons';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +26,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 export class AppModule { 
 
   constructor(library: FaIconLibrary) {
-    library.addIcons(faBars);
+    library.addIcons(faBars, faTimesCircle);
   }
 
 }
