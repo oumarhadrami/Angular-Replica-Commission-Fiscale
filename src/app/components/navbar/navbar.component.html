@@ -7,11 +7,21 @@
       <a class="navbar-brand h1" [routerLink]="'.'">Commission Fiscale</a>
 
       <button
-        class="navbar-toggler mx-auto"
+        class="navbar-toggler"
         type="button"
-        (click)="toggleIconAndIsMenuCollapsed()"
+        *ngIf="isMenuCollapsed"
+        (click)="isMenuCollapsed = !isMenuCollapsed"
       >
-        <fa-icon [icon]=toggleIcon></fa-icon>
+        <fa-icon [icon]="['fas','bars']"></fa-icon>
+      </button>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        *ngIf="!isMenuCollapsed"
+        (click)="isMenuCollapsed = !isMenuCollapsed"
+      >
+        <fa-icon [icon]="['far','times-circle']"></fa-icon>
       </button>
 
       <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse justify-content-center my-links-div">
