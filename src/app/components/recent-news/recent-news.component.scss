@@ -1,0 +1,7 @@
+.card{
+    border-radius: 0rem !important;
+}
+
+.card-img-top{
+    @extend .card;
+}

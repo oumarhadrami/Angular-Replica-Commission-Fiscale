@@ -1,8 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -13,7 +11,7 @@ import { faTimesCircle } from '@fortawesome/free-regular-svg-icons';
 import { HomeComponent } from './components/home/home.component';
 import { RecentNewsComponent } from './components/recent-news/recent-news.component';
 import { OlderNewsComponent } from './components/older-news/older-news.component';
-import { CarouselModule } from 'ngx-owl-carousel-o';
+import { SafeUrlPipe } from './pipes/safe-url.pipe';
 
 
 @NgModule({
@@ -22,7 +20,8 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     NavbarComponent,
     HomeComponent,
     RecentNewsComponent,
-    OlderNewsComponent
+    OlderNewsComponent,
+    SafeUrlPipe
   ],
   imports: [
     BrowserModule,
@@ -30,8 +29,6 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     FontAwesomeModule,
     NgbModule,
     HttpClientModule,
-    BrowserAnimationsModule,
-    CarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]
