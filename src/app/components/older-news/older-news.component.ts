@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { OwlOptions } from 'ngx-owl-carousel-o';
 import { News } from 'src/app/models/news';
 import { NewsService } from 'src/app/services/news.service';
 
