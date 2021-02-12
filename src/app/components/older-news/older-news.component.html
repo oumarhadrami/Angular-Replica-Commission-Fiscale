@@ -22,9 +22,9 @@
             />
           </div>
           <div class="card-body">
-            <h5 class="card-title">{{ older_news_item.news_title }}</h5>
+            <h5 class="card-title">{{ older_news_item.news_title! | textShorten:50 }}</h5>
             <p class="card-text">
-              {{ older_news_item.news_info }}
+              {{ older_news_item.news_info! | textShorten:250}}
             </p>
             <a href="#" class="btn btn-primary">Go somewhere</a>
           </div>

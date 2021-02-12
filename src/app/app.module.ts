@@ -13,6 +13,7 @@ import { RecentNewsComponent } from './components/recent-news/recent-news.compon
 import { OlderNewsComponent } from './components/older-news/older-news.component';
 import { SafeUrlPipe } from './pipes/safe-url.pipe';
 import { FooterComponent } from './components/footer/footer.component';
+import { TextShortenPipe } from './pipes/text-shorten.pipe';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { FooterComponent } from './components/footer/footer.component';
     RecentNewsComponent,
     OlderNewsComponent,
     SafeUrlPipe,
-    FooterComponent
+    FooterComponent,
+    TextShortenPipe
   ],
   imports: [
     BrowserModule,
