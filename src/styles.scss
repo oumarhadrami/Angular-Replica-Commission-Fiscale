@@ -3,6 +3,10 @@
 /* Importing Bootstrap SCSS file. */
 @import "~bootstrap/scss/bootstrap";
 
+/* Importing Owl Carousel Scss files*/
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+
 @font-face {
   font-family: "LouguiyaFR";
   src: url(\assets\fonts\LouguiyaFR.ttf);
