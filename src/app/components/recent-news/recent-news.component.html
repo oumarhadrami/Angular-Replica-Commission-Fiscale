@@ -1,1 +1,20 @@
-<p>recent-news works!</p>
+<h1 class="text-center m-3">Recent News</h1>
+<div class="row">
+  <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <div class="card" *ngFor="let recent_news_item of recentNewsList">
+        <img
+          class="card-img-top"
+          src="{{ recent_news_item.news_image }}"
+          alt="Card image cap"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ recent_news_item.news_title }}</h5>
+          <p class="card-text">
+            {{ recent_news_item.news_info }}
+          </p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+</div>
