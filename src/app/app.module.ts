@@ -12,6 +12,7 @@ import { HomeComponent } from './components/home/home.component';
 import { RecentNewsComponent } from './components/recent-news/recent-news.component';
 import { OlderNewsComponent } from './components/older-news/older-news.component';
 import { SafeUrlPipe } from './pipes/safe-url.pipe';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { SafeUrlPipe } from './pipes/safe-url.pipe';
     HomeComponent,
     RecentNewsComponent,
     OlderNewsComponent,
-    SafeUrlPipe
+    SafeUrlPipe,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
