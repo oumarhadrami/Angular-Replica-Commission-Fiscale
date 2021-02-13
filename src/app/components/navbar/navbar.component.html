@@ -41,14 +41,14 @@
               aria-labelledby="navbarDropdown1"
               class="dropdown-menu"
             >
-              <a ngbDropdownItem href="#" (click)="$event.preventDefault()"
+              <a ngbDropdownItem href="#" (click)="$event.preventDefault()" routerLink="commissionfiscale"
                 >Commission Fiscale</a
               >
-              <a ngbDropdownItem href="#" (click)="$event.preventDefault()"
+              <a ngbDropdownItem href="#" (click)="$event.preventDefault()" routerLink="ministre"
                 >Ministre des Finances</a
               >
               <div class="dropdown-divider"></div>
-              <a ngbDropdownItem href="#" (click)="$event.preventDefault()"
+              <a ngbDropdownItem href="#" (click)="$event.preventDefault()" routerLink="liens"
                 >Liens utiles</a
               >
             </div>
@@ -56,7 +56,7 @@
           <li class="nav-item">
             <a
               class="nav-link"
-              [routerLink]="'.'"
+              routerLink="regl_fisc"
               (click)="isMenuCollapsed = true"
               >Réglementations Fiscales</a
             >

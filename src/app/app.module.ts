@@ -18,6 +18,7 @@ import { PresentationCommissionComponent } from './components/presentation-commi
 import { PresentationLiensComponent } from './components/presentation-liens/presentation-liens.component';
 import { PresentationMinistreComponent } from './components/presentation-ministre/presentation-ministre.component';
 import { NewsDetailsComponent } from './components/news-details/news-details.component';
+import { ReglFiscComponent } from './components/regl-fisc/regl-fisc.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { NewsDetailsComponent } from './components/news-details/news-details.com
     PresentationCommissionComponent,
     PresentationLiensComponent,
     PresentationMinistreComponent,
-    NewsDetailsComponent
+    NewsDetailsComponent,
+    ReglFiscComponent
   ],
   imports: [
     BrowserModule,
