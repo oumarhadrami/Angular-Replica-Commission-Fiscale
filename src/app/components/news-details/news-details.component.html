@@ -1,1 +1,33 @@
-<p>news-details works!</p>
+<div class="row mt-2">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <div class="card">
+        <div
+          class="embed-responsive embed-responsive-16by9"
+          *ngIf="newsItem.news_video"
+        >
+          <iframe
+            class="embed-responsive-item"
+            [src]="newsItem.news_video | safeUrl"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div *ngIf="newsItem.news_image">
+          <img
+            class="card-img-top"
+            src="{{ newsItem.news_image }}"
+            alt="Card image cap"
+          />
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{ newsItem.news_title}}</h5>
+          <p class="card-text">
+            {{ newsItem.news_info}}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  

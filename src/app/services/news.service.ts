@@ -13,4 +13,8 @@ export class NewsService {
   getNewsListWithPageAndSize(params: any): Observable<any> {
     return this.http.get<any>(baseUrl, { params });
   }
+
+  getNewsById(id: string) : Observable<any>{
+    return this.http.get<any>(`${baseUrl}/${id}`);
+  }
 }
