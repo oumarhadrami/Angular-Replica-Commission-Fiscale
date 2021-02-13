@@ -17,6 +17,7 @@ import { TextShortenPipe } from './pipes/text-shorten.pipe';
 import { PresentationCommissionComponent } from './components/presentation-commission/presentation-commission.component';
 import { PresentationLiensComponent } from './components/presentation-liens/presentation-liens.component';
 import { PresentationMinistreComponent } from './components/presentation-ministre/presentation-ministre.component';
+import { NewsDetailsComponent } from './components/news-details/news-details.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { PresentationMinistreComponent } from './components/presentation-ministr
     TextShortenPipe,
     PresentationCommissionComponent,
     PresentationLiensComponent,
-    PresentationMinistreComponent
+    PresentationMinistreComponent,
+    NewsDetailsComponent
   ],
   imports: [
     BrowserModule,
