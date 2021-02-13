@@ -2,6 +2,7 @@
 
 /* Importing Bootstrap SCSS file. */
 @import "~bootstrap/scss/bootstrap";
+@import "/src/app/styles/variables";
 
 @font-face {
   font-family: "LouguiyaFR";
@@ -28,7 +29,7 @@
 }
 
 body{
-  background-color: #f0f2f5;
+  background-color: $my-overall-background-color;
   overflow-x: hidden;
   overflow-y: scroll;
 }
