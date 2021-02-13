@@ -14,6 +14,9 @@ import { OlderNewsComponent } from './components/older-news/older-news.component
 import { SafeUrlPipe } from './pipes/safe-url.pipe';
 import { FooterComponent } from './components/footer/footer.component';
 import { TextShortenPipe } from './pipes/text-shorten.pipe';
+import { PresentationCommissionComponent } from './components/presentation-commission/presentation-commission.component';
+import { PresentationLiensComponent } from './components/presentation-liens/presentation-liens.component';
+import { PresentationMinistreComponent } from './components/presentation-ministre/presentation-ministre.component';
 
 
 @NgModule({
@@ -25,7 +28,10 @@ import { TextShortenPipe } from './pipes/text-shorten.pipe';
     OlderNewsComponent,
     SafeUrlPipe,
     FooterComponent,
-    TextShortenPipe
+    TextShortenPipe,
+    PresentationCommissionComponent,
+    PresentationLiensComponent,
+    PresentationMinistreComponent
   ],
   imports: [
     BrowserModule,
