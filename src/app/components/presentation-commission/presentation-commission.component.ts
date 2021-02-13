@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommissionDescription } from 'src/app/models/commission-description';
+import { Ministre } from 'src/app/models/ministre';
 import { PresentationService } from 'src/app/services/presentation.service';
 
 @Component({
@@ -9,16 +10,24 @@ import { PresentationService } from 'src/app/services/presentation.service';
 })
 export class PresentationCommissionComponent implements OnInit {
   commissionDescription?: CommissionDescription;
+  ministre?: Ministre;
 
   constructor(private presentationService: PresentationService) {}
 
   ngOnInit(): void {
     this.getCommissionDescription();
+    this.getMinistre();
   }
 
   getCommissionDescription(): void {
     this.presentationService.getCommissionDescription().subscribe(
       (respone) => this.commissionDescription = respone,
+      (error) => console.log(error)
+    );
+  }
+  getMinistre(): void{
+    this.presentationService.getMinistre().subscribe(
+      (response) => this.ministre = response,
       (error) => console.log(error)
     );
   }

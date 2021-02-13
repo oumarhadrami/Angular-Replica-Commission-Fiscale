@@ -14,4 +14,8 @@ export class PresentationService {
   getCommissionDescription() : Observable<any>{
     return this.http.get<any>(`${baseUrl}/commissiondesciption/1`);
   }
+
+  getMinistre() : Observable<any>{
+    return this.http.get<any>(`${baseUrl}/ministre/1`);
+  }
 }
