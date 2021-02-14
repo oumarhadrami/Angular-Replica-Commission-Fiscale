@@ -11,15 +11,16 @@ export class ReglFiscComponent implements OnInit {
   
   fileInfos?: Observable<any>;
   activeTab = 1;
+  searchText = '';
 
   constructor(private filesService: FilesService) { }
 
   ngOnInit(): void {
-    this.getFiles();
+    this.getFilesFromSearchText();
   }
 
-  getFiles() {
-    this.fileInfos = this.filesService.getFiles(this.activeTab);
+  getFilesFromSearchText(){
+   this.fileInfos = this.filesService.getFilesFromSearchText(this.searchText, this.activeTab)
   }
 
 }

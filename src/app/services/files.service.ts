@@ -1,6 +1,7 @@
 import { HttpClient, HttpEvent, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 const baseUrl = 'http://localhost:8080';
 
@@ -8,8 +9,9 @@ const baseUrl = 'http://localhost:8080';
   providedIn: 'root',
 })
 export class FilesService {
+  private fileInfos!: Observable<any>;
   constructor(private http: HttpClient) {}
-  
+
   upload(file: File): Observable<HttpEvent<any>> {
     const formData: FormData = new FormData();
 
@@ -17,14 +19,22 @@ export class FilesService {
 
     const req = new HttpRequest('POST', `${baseUrl}/upload`, formData, {
       reportProgress: true,
-      responseType: 'json'
+      responseType: 'json',
     });
 
     return this.http.request(req);
   }
 
-  getFiles(folderType: number): Observable<any> {
-    console.log(`${baseUrl}/files/${folderType}`);
-    return this.http.get(`${baseUrl}/files/${folderType}`);
+  getFilesFromSearchText(
+    searchText: string,
+    folderType: number
+  ): Observable<any> {
+    this.fileInfos = this.http.get(`${baseUrl}/files/${folderType}`);
+    searchText = searchText.toLowerCase();
+    return this.fileInfos.pipe(
+      map((files) =>
+        files.filter((file: { [x: string]: string }) => file['name'].toLowerCase().includes(searchText))
+      )
+    );
   }
 }

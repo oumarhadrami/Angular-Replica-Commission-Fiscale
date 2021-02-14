@@ -19,6 +19,7 @@ import { PresentationLiensComponent } from './components/presentation-liens/pres
 import { PresentationMinistreComponent } from './components/presentation-ministre/presentation-ministre.component';
 import { NewsDetailsComponent } from './components/news-details/news-details.component';
 import { ReglFiscComponent } from './components/regl-fisc/regl-fisc.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import { ReglFiscComponent } from './components/regl-fisc/regl-fisc.component';
     FontAwesomeModule,
     NgbModule,
     HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
