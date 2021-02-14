@@ -4,7 +4,7 @@
   <nav class="navbar navbar-expand-md">
     <div class="d-md-flex flex-md-nowrap my-navbar-div w-100">
         
-      <a class="navbar-brand h1 my-1" [routerLink]="'.'">Commission Fiscale</a>
+      <a class="navbar-brand h1 my-1" [routerLink]="'.'">{{'navbrand' | translate}}</a>
 
       <button
         class="navbar-toggler float-end"
@@ -34,7 +34,7 @@
               id="navbarDropdown1"
               role="button"
             >
-              Présentation
+            {{'presentation' | translate}}
             </a>
             <div
               ngbDropdownMenu
@@ -42,14 +42,14 @@
               class="dropdown-menu"
             >
               <a ngbDropdownItem href="#" (click)="$event.preventDefault()" routerLink="commissionfiscale"
-                >Commission Fiscale</a
+                >{{'presentation_comm' | translate}}</a
               >
               <a ngbDropdownItem href="#" (click)="$event.preventDefault()" routerLink="ministre"
-                >Ministre des Finances</a
+                >{{'presentation_ministre' | translate}}</a
               >
               <div class="dropdown-divider"></div>
               <a ngbDropdownItem href="#" (click)="$event.preventDefault()" routerLink="liens"
-                >Liens utiles</a
+                >{{'presentation_liens' | translate}}</a
               >
             </div>
           </li>
@@ -58,7 +58,7 @@
               class="nav-link"
               routerLink="regl_fisc"
               (click)="isMenuCollapsed = true"
-              >Réglementations Fiscales</a
+              >{{'reg_fisc' | translate}}</a
             >
           </li>
           <li class="nav-item">
@@ -66,7 +66,7 @@
               class="nav-link nav-link-arabe" 
               [routerLink]="'.'"
               (click)="isMenuCollapsed = true"
-              >العربية</a
+              >{{'language' | translate}}</a
             >
           </li>
         </ul>

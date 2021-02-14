@@ -1,7 +1,7 @@
 <ul ngbNav #nav="ngbNav" [(activeId)]="activeTab" class="nav-tabs">
   <li [ngbNavItem]="1">
     <a ngbNavLink (click)="getFilesFromSearchText()"
-      >Réglementations Fiscales</a
+      >{{'reg_fisc' | translate}}</a
     >
     <ng-template ngbNavContent>
       <div class="card mt-3 px-0 container-sm">
@@ -17,13 +17,13 @@
                 aria-describedby="search-text"
                 [(ngModel)]="searchText"
                 (input)="getFilesFromSearchText()"
-                placeholder="Enter text to search"
+                placeholder="{{'search' | translate}}"
                 autofocus
               />
             </div>
           </div>
         </div>
-        <div class="card-header">List of Files</div>
+        <div class="card-header">{{'files_list' | translate}}</div>
         <ul
           class="list-group list-group-flush"
           *ngFor="let file of fileInfos | async"
@@ -45,7 +45,7 @@
     </ng-template>
   </li>
   <li [ngbNavItem]="2">
-    <a ngbNavLink (click)="getFilesFromSearchText()">Rapports</a>
+    <a ngbNavLink (click)="getFilesFromSearchText()">{{'rapports' | translate}}</a>
     <ng-template ngbNavContent>
       <div class="card mt-3 px-0 container-sm">
         <div class="container-sm my-2">
@@ -60,13 +60,13 @@
                 aria-describedby="search-text"
                 [(ngModel)]="searchText"
                 (input)="getFilesFromSearchText()"
-                placeholder="Enter text to search"
+                placeholder="{{'search' | translate}}"
                 autofocus
               />
             </div>
           </div>
         </div>
-        <div class="card-header">List of Files</div>
+        <div class="card-header">{{'files_list' | translate}}</div>
         <ul
           class="list-group list-group-flush"
           *ngFor="let file of fileInfos | async"
@@ -89,7 +89,7 @@
   </li>
   <li [ngbNavItem]="3">
     <a ngbNavLink (click)="getFilesFromSearchText()"
-      >Autres Lois et Réglementations</a
+      >{{'autres_lois' | translate}}</a
     >
     <ng-template ngbNavContent>
       <div class="card mt-3 px-0 container-sm">
@@ -105,13 +105,13 @@
                 aria-describedby="search-text"
                 [(ngModel)]="searchText"
                 (input)="getFilesFromSearchText()"
-                placeholder="Enter text to search"
+                placeholder="{{'search' | translate}}"
                 autofocus
               />
             </div>
           </div>
         </div>
-        <div class="card-header">List of Files</div>
+        <div class="card-header">{{'files_list' | translate}}</div>
         <ul
           class="list-group list-group-flush"
           *ngFor="let file of fileInfos | async"

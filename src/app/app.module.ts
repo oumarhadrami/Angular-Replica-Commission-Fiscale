@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import {  HttpClient, HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -21,6 +21,8 @@ import { NewsDetailsComponent } from './components/news-details/news-details.com
 import { ReglFiscComponent } from './components/regl-fisc/regl-fisc.component';
 import { FormsModule } from '@angular/forms';
 import { HighlightDirective } from './directives/highlight.directive';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 
 @NgModule({
@@ -46,7 +48,14 @@ import { HighlightDirective } from './directives/highlight.directive';
     FontAwesomeModule,
     NgbModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: httpTranslateLoader,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
@@ -57,4 +66,9 @@ export class AppModule {
     library.addIcons(faBars, faTimesCircle);
   }
 
+}
+
+// AOT compilation support
+export function httpTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http);
 }

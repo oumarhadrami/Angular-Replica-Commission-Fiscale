@@ -1,4 +1,4 @@
-<h1 class="text-center m-3">More News</h1>
+<h1 class="text-center m-3">{{'plus_actualites' | translate}}</h1>
 <div class="row">
   <div class="col-md-4" *ngFor="let older_news_item of olderNewsList">
     <div class="card">
@@ -28,7 +28,7 @@
           href="#"
           class="btn btn-primary"
           routerLink="news/{{ older_news_item.id }}"
-          >Know More</a
+          >{{'savoir_plus' | translate}}</a
         >
       </div>
     </div>
