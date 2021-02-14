@@ -1,13 +1,13 @@
 <header>
-<div class="entire-navbar-div">
+<div class="entire-navbar-div py-4">
 <div class="container-md" >
   <nav class="navbar navbar-expand-md">
     <div class="d-md-flex flex-md-nowrap my-navbar-div w-100">
         
-      <a class="navbar-brand h1" [routerLink]="'.'">Commission Fiscale</a>
+      <a class="navbar-brand h1 my-1" [routerLink]="'.'">Commission Fiscale</a>
 
       <button
-        class="navbar-toggler float-right my-1"
+        class="navbar-toggler float-end"
         type="button"
         *ngIf="isMenuCollapsed"
         (click)="isMenuCollapsed = !isMenuCollapsed"
@@ -16,7 +16,7 @@
       </button>
 
       <button
-        class="navbar-toggler float-right  my-1"
+        class="navbar-toggler float-end"
         type="button"
         *ngIf="!isMenuCollapsed"
         (click)="isMenuCollapsed = !isMenuCollapsed"
