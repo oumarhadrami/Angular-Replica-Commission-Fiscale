@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { UploadFilesService } from 'src/app/services/upload-files.service';
+import { FilesService } from 'src/app/services/files.service';
 
 @Component({
   selector: 'app-regl-fisc',
@@ -10,11 +10,16 @@ import { UploadFilesService } from 'src/app/services/upload-files.service';
 export class ReglFiscComponent implements OnInit {
   
   fileInfos?: Observable<any>;
+  activeTab = 1;
 
-  constructor(private uploadService: UploadFilesService) { }
+  constructor(private filesService: FilesService) { }
 
   ngOnInit(): void {
-    this.fileInfos = this.uploadService.getFiles();
+    this.getFiles();
+  }
+
+  getFiles() {
+    this.fileInfos = this.filesService.getFiles(this.activeTab);
   }
 
 }

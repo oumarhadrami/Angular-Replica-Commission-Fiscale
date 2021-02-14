@@ -7,7 +7,7 @@ const baseUrl = 'http://localhost:8080';
 @Injectable({
   providedIn: 'root',
 })
-export class UploadFilesService {
+export class FilesService {
   constructor(private http: HttpClient) {}
   
   upload(file: File): Observable<HttpEvent<any>> {
@@ -23,7 +23,8 @@ export class UploadFilesService {
     return this.http.request(req);
   }
 
-  getFiles(): Observable<any> {
-    return this.http.get(`${baseUrl}/files`);
+  getFiles(folderType: number): Observable<any> {
+    console.log(`${baseUrl}/files/${folderType}`);
+    return this.http.get(`${baseUrl}/files/${folderType}`);
   }
 }
