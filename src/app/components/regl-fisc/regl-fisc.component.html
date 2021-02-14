@@ -1,6 +1,8 @@
 <ul ngbNav #nav="ngbNav" [(activeId)]="activeTab" class="nav-tabs">
   <li [ngbNavItem]="1">
-    <a ngbNavLink (click)="getFilesFromSearchText()">Réglementations Fiscales</a>
+    <a ngbNavLink (click)="getFilesFromSearchText()"
+      >Réglementations Fiscales</a
+    >
     <ng-template ngbNavContent>
       <div class="card mt-3 px-0 container-sm">
         <div class="container-sm my-2">
@@ -27,7 +29,16 @@
           *ngFor="let file of fileInfos | async"
         >
           <li class="list-group-item">
-            <a class="filename" href="{{ file.url }}">{{ file.name }}</a>
+            <a
+              class="filename"
+              href="{{ file.url }}"
+              appHighlight
+              [searchedWord]="searchText"
+              [fileName]="file.name"
+              [fileUrl]="file.url"
+              [classToApply]="'font-weight-bold'"
+              >{{ file.name }}</a
+            >
           </li>
         </ul>
       </div>
@@ -61,14 +72,25 @@
           *ngFor="let file of fileInfos | async"
         >
           <li class="list-group-item">
-            <a class="filename" href="{{ file.url }}">{{ file.name }}</a>
+            <a
+              class="filename"
+              href="{{ file.url }}"
+              appHighlight
+              [searchedWord]="searchText"
+              [fileName]="file.name"
+              [fileUrl]="file.url"
+              [classToApply]="'font-weight-bold'"
+              >{{ file.name }}</a
+            >
           </li>
         </ul>
       </div>
     </ng-template>
   </li>
   <li [ngbNavItem]="3">
-    <a ngbNavLink (click)="getFilesFromSearchText()">Autres Lois et Réglementations</a>
+    <a ngbNavLink (click)="getFilesFromSearchText()"
+      >Autres Lois et Réglementations</a
+    >
     <ng-template ngbNavContent>
       <div class="card mt-3 px-0 container-sm">
         <div class="container-sm my-2">
@@ -95,7 +117,16 @@
           *ngFor="let file of fileInfos | async"
         >
           <li class="list-group-item">
-            <a class="filename" href="{{ file.url }}">{{ file.name }}</a>
+            <a
+              class="filename"
+              href="{{ file.url }}"
+              appHighlight
+              [searchedWord]="searchText"
+              [fileName]="file.name"
+              [fileUrl]="file.url"
+              [classToApply]="'font-weight-bold'"
+              >{{ file.name }}</a
+            >
           </li>
         </ul>
       </div>

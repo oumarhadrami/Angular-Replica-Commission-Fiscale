@@ -20,6 +20,7 @@ import { PresentationMinistreComponent } from './components/presentation-ministr
 import { NewsDetailsComponent } from './components/news-details/news-details.component';
 import { ReglFiscComponent } from './components/regl-fisc/regl-fisc.component';
 import { FormsModule } from '@angular/forms';
+import { HighlightDirective } from './directives/highlight.directive';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { FormsModule } from '@angular/forms';
     PresentationLiensComponent,
     PresentationMinistreComponent,
     NewsDetailsComponent,
-    ReglFiscComponent
+    ReglFiscComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
