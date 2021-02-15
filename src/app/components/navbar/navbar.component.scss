@@ -1,8 +1,5 @@
 @import "/src/app/styles/variables";
 
-
-
-
 .entire-navbar-div {
   background-color: $my-primary-color;
   font-family: $french-font;
@@ -25,8 +22,12 @@
     color: white;
   }
   .nav-link-arabe {
-    font-family: "LouguiyaAR";
+    font-family: $arabe-font;
     font-size: 18px;
+    cursor: pointer;
+  }
+  .nav-link-fran {
+    cursor: pointer;
   }
 
   .dropdown-menu:focus {

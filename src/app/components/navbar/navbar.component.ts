@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
   public isMenuCollapsed = true;
+  @Input() currentLang?: string;
+  @Output() languageSwitchEvent = new EventEmitter<string>();
+  
   constructor() { }
 
   ngOnInit(): void {
   } 
+
+  switchLang(lang: string) : void{
+    this.languageSwitchEvent.emit(lang);
+  }
 
 }
