@@ -22,11 +22,17 @@
         />
       </div>
       <div class="card-body">
-        <h5 class="card-title">
+        <h5 class="card-title" *ngIf="currentLang === 'fr'">
           {{ older_news_item.news_title! | textShorten: 50 }}
         </h5>
-        <p class="card-text">
+        <h5 class="card-title" *ngIf="currentLang === 'ar'">
+          {{ older_news_item.news_title_ar! | textShorten: 50 }}
+        </h5>
+        <p class="card-text" *ngIf="currentLang === 'fr'">
           {{ older_news_item.news_info! | textShorten: 250 }}
+        </p>
+        <p class="card-text" *ngIf="currentLang === 'ar'">
+          {{ older_news_item.news_info_ar! | textShorten: 250 }}
         </p>
         <a
           class="btn btn-primary"
