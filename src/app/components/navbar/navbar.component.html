@@ -7,7 +7,7 @@
       <a class="navbar-brand h1 my-1" [routerLink]="'.'">{{'navbrand' | translate}}</a>
 
       <button
-        class="navbar-toggler float-end"
+        class="navbar-toggler float-right my-2"
         type="button"
         *ngIf="isMenuCollapsed"
         (click)="isMenuCollapsed = !isMenuCollapsed"
@@ -16,7 +16,7 @@
       </button>
 
       <button
-        class="navbar-toggler float-end"
+        class="navbar-toggler float-right my-2"
         type="button"
         *ngIf="!isMenuCollapsed"
         (click)="isMenuCollapsed = !isMenuCollapsed"

@@ -21,9 +21,11 @@ export class AppComponent {
     if (lang == 'ar') {
       document.getElementsByTagName('html').item(0)?.setAttribute('lang','ar');
       document.dir = 'rtl';
+      document.getElementById('stylesheet')?.setAttribute('href', 'assets/bootstrap/bootstrap.rtl.min.css');
     } else {
       document.getElementsByTagName('html').item(0)?.setAttribute('lang','fr');
       document.dir = 'ltr';
+      document.getElementById('stylesheet')?.setAttribute('href', 'assets/bootstrap/bootstrap.min.css');
     }
   }
  }

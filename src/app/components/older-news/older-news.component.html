@@ -1,9 +1,13 @@
-<h1 class="text-center m-3">{{'plus_actualites' | translate}}</h1>
+<h1 class="text-center m-3">{{ "plus_actualites" | translate }}</h1>
 <div class="row">
   <div class="col-md-4" *ngFor="let older_news_item of olderNewsList">
     <div class="card">
-      <div class="ratio ratio-16x9" *ngIf="older_news_item.news_video">
+      <div
+        class="embed-responsive embed-responsive-16by9"
+        *ngIf="older_news_item.news_video"
+      >
         <iframe
+          class="embed-responsive-item"
           [src]="older_news_item.news_video | safeUrl"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -25,10 +29,9 @@
           {{ older_news_item.news_info! | textShorten: 250 }}
         </p>
         <a
-          href="#"
           class="btn btn-primary"
           routerLink="news/{{ older_news_item.id }}"
-          >{{'savoir_plus' | translate}}</a
+          >{{ "savoir_plus" | translate }}</a
         >
       </div>
     </div>
