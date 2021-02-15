@@ -1,6 +1,7 @@
 import { Component, Inject, Input } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { DOCUMENT } from '@angular/common';
+import { LanguageService } from './services/language.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,7 +11,8 @@ export class AppComponent {
 
   constructor(
     public translate: TranslateService,
-    @Inject(DOCUMENT) private document: Document
+    @Inject(DOCUMENT) private document: Document,
+    private languageService: LanguageService
   ) {
     translate.addLangs(['fr', 'ar']);
     translate.setDefaultLang('fr');
@@ -27,5 +29,6 @@ export class AppComponent {
       document.dir = 'ltr';
       document.getElementById('stylesheet')?.setAttribute('href', 'assets/bootstrap/bootstrap.min.css');
     }
+    this.languageService.announceCurrentLang(lang);
   }
  }

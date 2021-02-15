@@ -27,13 +27,13 @@ export class FilesService {
 
   getFilesFromSearchText(
     searchText: string,
-    folderType: number
+    folderType: number,
+    currentLang: string
   ): Observable<any> {
-    this.fileInfos = this.http.get(`${baseUrl}/files/${folderType}`);
-    searchText = searchText.toLowerCase();
+    this.fileInfos = this.http.get(`${baseUrl}/files/${folderType}/${currentLang}`);
     return this.fileInfos.pipe(
       map((files) =>
-        files.filter((file: { [x: string]: string }) => file['name'].toLowerCase().includes(searchText))
+        files.filter((file: { [x: string]: string }) => file['name'].toLowerCase().includes(searchText.toLowerCase()))
       )
     );
   }

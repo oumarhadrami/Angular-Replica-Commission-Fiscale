@@ -61,7 +61,7 @@
               >{{'reg_fisc' | translate}}</a
             >
           </li>
-          <li class="nav-item" *ngIf="currentLang === undefined || currentLang !=='ar'">
+          <li class="nav-item" *ngIf="currentLang === 'fr'">
             <a
               class="nav-link nav-link-arabe" 
               (click)="isMenuCollapsed = true ; switchLang('ar')"
