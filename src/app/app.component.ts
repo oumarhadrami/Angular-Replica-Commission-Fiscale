@@ -22,7 +22,7 @@ export class AppComponent {
       document.getElementsByTagName('html').item(0)?.setAttribute('lang','ar');
       document.dir = 'rtl';
     } else {
-      document.getElementsByTagName('html').item(0)?.setAttribute('lang','en');
+      document.getElementsByTagName('html').item(0)?.setAttribute('lang','fr');
       document.dir = 'ltr';
     }
   }

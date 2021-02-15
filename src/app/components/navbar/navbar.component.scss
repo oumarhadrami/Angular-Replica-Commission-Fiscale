@@ -23,11 +23,11 @@
   }
   .nav-link-arabe {
     font-family: $arabe-font;
-    font-size: 18px;
     cursor: pointer;
   }
   .nav-link-fran {
     cursor: pointer;
+    font-family: $french-font;
   }
 
   .dropdown-menu:focus {
