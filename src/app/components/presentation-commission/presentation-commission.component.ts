@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommissionDescription } from 'src/app/models/commission-description';
 import { Ministre } from 'src/app/models/ministre';
+import { LanguageService } from 'src/app/services/language.service';
 import { PresentationService } from 'src/app/services/presentation.service';
 
 @Component({
@@ -11,8 +12,16 @@ import { PresentationService } from 'src/app/services/presentation.service';
 export class PresentationCommissionComponent implements OnInit {
   commissionDescription?: CommissionDescription;
   ministre?: Ministre;
+  currentLang?: string;
 
-  constructor(private presentationService: PresentationService) {}
+  constructor(
+    private presentationService: PresentationService,
+    private languageService: LanguageService
+  ) {
+    this.languageService.currentLang.subscribe((currentLang) => {
+      this.currentLang = currentLang;
+    });
+  }
 
   ngOnInit(): void {
     this.getCommissionDescription();
@@ -21,13 +30,13 @@ export class PresentationCommissionComponent implements OnInit {
 
   getCommissionDescription(): void {
     this.presentationService.getCommissionDescription().subscribe(
-      (respone) => this.commissionDescription = respone,
+      (respone) => (this.commissionDescription = respone),
       (error) => console.log(error)
     );
   }
-  getMinistre(): void{
+  getMinistre(): void {
     this.presentationService.getMinistre().subscribe(
-      (response) => this.ministre = response,
+      (response) => (this.ministre = response),
       (error) => console.log(error)
     );
   }

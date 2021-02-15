@@ -14,10 +14,13 @@ export class RecentNewsComponent implements OnInit {
   size = 2;
   currentLang?: string;
 
-  constructor(private newsService: NewsService,private languageService: LanguageService) {
+  constructor(
+    private newsService: NewsService,
+    private languageService: LanguageService
+  ) {
     this.languageService.currentLang.subscribe((currentLang) => {
       this.currentLang = currentLang;
-   })
+    });
   }
 
   ngOnInit(): void {

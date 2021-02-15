@@ -1,8 +1,11 @@
 <h3 class="text-center mb-5 pb-5 text-white">{{'presentation_comm_title' | translate}}</h3>
 <div class="container-sm">
 <div class="card">
-    <div class="card-body text-justify p-5">
+    <div class="card-body text-justify p-5" *ngIf="currentLang === 'fr'">
         <p>{{commissionDescription?.description_fr}}</p>
+    </div>
+    <div class="card-body text-justify p-5" *ngIf="currentLang === 'ar'">
+        <p>{{commissionDescription?.description_ar}}</p>
     </div>
 </div>
 </div>
@@ -10,8 +13,11 @@
 <h4 class="text-center mx-5 mt-5 pb-5">{{'mot_ministre' | translate}}</h4>
 <div class="container-sm">
 <div class="card">
-    <div class="card-body text-justify p-5">
+    <div class="card-body text-justify p-5" *ngIf="currentLang === 'fr'">
         <p>{{ministre?.mot_du_ministre}}</p>
+    </div>
+    <div class="card-body text-justify p-5" *ngIf="currentLang === 'ar'">
+        <p>{{ministre?.mot_du_ministre_ar}}</p>
     </div>
 </div>
 </div>
