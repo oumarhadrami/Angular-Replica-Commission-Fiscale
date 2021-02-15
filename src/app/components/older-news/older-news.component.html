@@ -4,20 +4,20 @@
     <div class="card">
       <div
         class="embed-responsive embed-responsive-16by9"
-        *ngIf="older_news_item.news_video"
+        *ngIf="older_news_item?.news_video"
       >
         <iframe
           class="embed-responsive-item"
-          [src]="older_news_item.news_video | safeUrl"
+          [src]="older_news_item.news_video! | safeUrl"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
         ></iframe>
       </div>
-      <div *ngIf="older_news_item.news_image">
+      <div *ngIf="older_news_item?.news_image">
         <img
           class="card-img-top"
-          [src]="older_news_item.news_image"
+          [src]="older_news_item.news_image!"
           alt="Card image cap"
         />
       </div>

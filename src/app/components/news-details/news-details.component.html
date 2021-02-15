@@ -4,27 +4,35 @@
     <div class="card">
       <div
         class="embed-responsive embed-responsive-16by9"
-        *ngIf="newsItem.news_video"
+        *ngIf="newsItem?.news_video"
       >
         <iframe
           class="embed-responsive-item"
-          [src]="newsItem.news_video | safeUrl"
+          [src]="newsItem.news_video! | safeUrl"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
         ></iframe>
       </div>
-      <div *ngIf="newsItem.news_image">
+      <div *ngIf="newsItem?.news_image">
         <img
           class="card-img-top"
-          src="{{ newsItem.news_image }}"
+          src="{{ newsItem.news_image! }}"
           alt="Card image cap"
         />
       </div>
       <div class="card-body">
-        <h5 class="card-title">{{ newsItem.news_title }}</h5>
-        <p class="card-text">
-          {{ newsItem.news_info }}
+        <h5 class="card-title" *ngIf="currentLang === 'fr'">
+          {{ newsItem.news_title! | textShorten: 50 }}
+        </h5>
+        <h5 class="card-title" *ngIf="currentLang === 'ar'">
+          {{ newsItem.news_title_ar! | textShorten: 50 }}
+        </h5>
+        <p class="card-text" *ngIf="currentLang === 'fr'">
+          {{ newsItem.news_info! | textShorten: 400 }}
+        </p>
+        <p class="card-text" *ngIf="currentLang === 'ar'">
+          {{ newsItem.news_info_ar! | textShorten: 400 }}
         </p>
       </div>
     </div>

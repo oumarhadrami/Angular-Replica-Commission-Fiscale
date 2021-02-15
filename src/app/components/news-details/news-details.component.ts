@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { News } from 'src/app/models/news';
+import { LanguageService } from 'src/app/services/language.service';
 import { NewsService } from 'src/app/services/news.service';
 
 @Component({
@@ -10,12 +11,17 @@ import { NewsService } from 'src/app/services/news.service';
 })
 export class NewsDetailsComponent implements OnInit {
   newsItem!: News;
+  currentLang?: string;
 
   constructor(
     private newsService: NewsService,
     private route: ActivatedRoute,
-    private router: Router
-  ) {}
+    private languageService: LanguageService
+  ) {
+    this.languageService.currentLang.subscribe((currentLang) => {
+      this.currentLang = currentLang;
+    });
+  }
 
   ngOnInit(): void {
     this.getNewsById(this.route.snapshot.params.id);
@@ -23,7 +29,7 @@ export class NewsDetailsComponent implements OnInit {
 
   getNewsById(id: string): void {
     this.newsService.getNewsById(id).subscribe(
-      (response) => this.newsItem = response,
+      (response) => (this.newsItem = response),
       (error) => console.log(error)
     );
   }
